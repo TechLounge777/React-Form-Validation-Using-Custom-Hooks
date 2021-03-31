@@ -1,6 +1,8 @@
-import React from 'react'
+import React from 'react';
+import useForm from './useForm';
 
 const FormSignup = () => {
+    const {handleChange, values} = useForm();
     return (
         <div className='form-content-right'>
             <form className='form'>    
@@ -16,7 +18,8 @@ const FormSignup = () => {
                         name='username'
                         className='form-input'
                         placeholder='Enter your user name'
-
+                        value={values.username}
+                        onChange={handleChange}
                     />
                 
             </div>
@@ -31,7 +34,8 @@ const FormSignup = () => {
                         name='email'
                         className='form-input'
                         placeholder='Enter your email'
-
+                        value={values.email}
+                        onChange={handleChange}
                     />
             </div>
             <div className='form-inputs'>
@@ -45,6 +49,8 @@ const FormSignup = () => {
                         name='password'
                         className='form-input'
                         placeholder='Enter your password'
+                        value={values.password}
+                        onChange={handleChange}
                     />
             </div>
             <div className='form-inputs'>
@@ -57,11 +63,13 @@ const FormSignup = () => {
                         type='password2' 
                         name='password2'
                         className='form-input'
-                        placeholder='Confirm your password2'
+                        placeholder='Confirm yo ur password2'
+                        value={values.password2}
+                        onChange={handleChange}
                     />
             </div>
             <button className='form-input-btn' type='submit'>
-                Signup
+                Sign up
             </button>
             <span className='form-input-login'>Already have an account? Login <a href='#'>here</a></span>
             </form>
